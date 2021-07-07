@@ -18,13 +18,14 @@ const MoviePortraitLayout = ({ movie, setMovieEditingId, navigateToDetails }) =>
   let posterHeight = posterWidth * 1.5;
   const MARGIN = 5;
   const BORDER_RADIUS = 10;
-
+  console.log("MOVIE", movie.title, movie.daysUntilRelease);
   const styles = StyleSheet.create({
     movieCard: {
       backgroundColor: colors.background,
       width: "100%",
       margin: MARGIN,
       width: posterWidth,
+
       borderWidth: 1,
       borderRadius: BORDER_RADIUS,
       borderColor: "#ddd",
@@ -56,6 +57,37 @@ const MoviePortraitLayout = ({ movie, setMovieEditingId, navigateToDetails }) =>
         }}
       >
         <View>
+          {movie.daysUntilRelease > -30 ? (
+            <View
+              style={{
+                position: "absolute",
+                width: posterWidth / 2,
+                right: 0,
+                height: 20,
+                borderRadius: BORDER_RADIUS,
+                zIndex: 10,
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <View
+                style={{
+                  position: "absolute",
+                  width: posterWidth / 2,
+                  right: 0,
+                  height: 20,
+                  opacity: 0.7,
+                  borderRadius: BORDER_RADIUS,
+                  backgroundColor: movie.daysUntilRelease > 0 ? "red" : "green",
+                  borderWidth: 1,
+                  borderColor: "white",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              ></View>
+              <Text style={{ color: "white" }}>{movie.releaseDate.formatted}</Text>
+            </View>
+          ) : null}
           <PosterImage
             uri={movie.posterURL}
             posterWidth={posterWidth}
