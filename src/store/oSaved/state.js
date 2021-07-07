@@ -72,12 +72,6 @@ export const state = {
     movieList = _.orderBy(movieList, sortFields, sortDirections);
     // return direction === "asc" ? movieList : movieList.reverse();
     movieList = movieList.map((movie) => {
-      console.log(movie.title, movie.releaseDate.epoch, Math.floor(Date.now() / 1000));
-      console.log(movie.title, Math.floor(Date.now() / 1000) - movie.releaseDate.epoch);
-      console.log(
-        movie.title,
-        (movie.releaseDate.epoch - Math.floor(Date.now() / 1000)) / (3600 * 24)
-      );
       const daysUntilRelease = Math.floor(
         (movie.releaseDate.epoch - Math.floor(Date.now() / 1000)) / (3600 * 24)
       );
@@ -86,10 +80,6 @@ export const state = {
         daysUntilRelease,
       };
     });
-    console.log(
-      "MOVIELIST",
-      movieList.map((el) => `${el.title}---${el.daysUntilRelease}`)
-    );
     return movieList;
   }),
   //--------------

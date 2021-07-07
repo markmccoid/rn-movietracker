@@ -18,7 +18,7 @@ const MoviePortraitLayout = ({ movie, setMovieEditingId, navigateToDetails }) =>
   let posterHeight = posterWidth * 1.5;
   const MARGIN = 5;
   const BORDER_RADIUS = 10;
-  console.log("MOVIE", movie.title, movie.daysUntilRelease);
+
   const styles = StyleSheet.create({
     movieCard: {
       backgroundColor: colors.background,
