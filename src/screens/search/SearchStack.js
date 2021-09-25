@@ -1,8 +1,9 @@
 import React from "react";
-import { Button, TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { MenuIcon } from "../../components/common/Icons";
 
+import { colors } from "../../globalStyles";
 import SearchScreen from "./SearchScreen";
 import ViewDetails from "../view/ViewDetails/ViewDetails";
 import DetailPerson from "../view/ViewDetails/DetailPerson";
@@ -11,9 +12,9 @@ const SearchStack = createStackNavigator();
 const SearchStackScreen = () => {
   return (
     <SearchStack.Navigator
-      screenOptions={(navigation, route) => {
-        // console.log("SearchScreenStack", navigation.route, route);
-      }}
+    // screenOptions={(navigation, route) => {
+    //   // console.log("SearchScreenStack", navigation.route, route);
+    // }}
     >
       <SearchStack.Screen
         name="Search"

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, TouchableOpacity, Text } from "react-native";
+import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
 
 import { createStackNavigator } from "@react-navigation/stack";
 import { enableScreens } from "react-native-screens";
@@ -15,6 +15,7 @@ import ViewMoviesScreen from "./ViewMovies/ViewMoviesScreen";
 import ViewMoviesFilterScreen from "./ViewMovies/ViewMoviesFilterScreen";
 import ViewDetails from "./ViewDetails/ViewDetails";
 import DetailPerson from "./ViewDetails/DetailPerson";
+import { colors } from "../../globalStyles";
 
 // const ViewStack = createStackNavigator();
 // const ViewMoviesStackNav = createStackNavigator();
@@ -68,7 +69,21 @@ const ViewStackScreen = () => {
   const { clearFilterScreen } = actions.oSaved;
 
   return (
-    <ViewStack.Navigator initialRouteName="Movies">
+    <ViewStack.Navigator
+      initialRouteName="Movies"
+      screenOptions={{
+        headerStyle: {
+          // backgroundColor: colors.background,
+          // blurEffect: "systemChromeMaterial",
+        },
+        contentStyle: {
+          borderTopColor: colors.commonBorder,
+          borderTopWidth: StyleSheet.hairlineWidth,
+          borderBottomColor: colors.commonBorder,
+          borderBottomWidth: StyleSheet.hairlineWidth,
+        },
+      }}
+    >
       <ViewStack.Screen
         name="ViewMovies"
         component={ViewMoviesStack}
