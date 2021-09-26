@@ -37,11 +37,11 @@ const DetailButtonBar = ({
         }
         title="Open in IMDB"
         bgOpacity="ff"
-        bgColor={colors.primary}
+        bgColor={colors.imdbYellow}
         small
         // width={150}
         wrapperStyle={{ borderRadius: 10, paddingLeft: 15, paddingRight: 15 }}
-        color="#fff"
+        color="black"
         noBorder
       />
       <Button

@@ -13,6 +13,9 @@ export const colors = {
   listBackground: "white",
   listItemBackground: "white",
   commonBorder: "#777",
+  buttonPrimary: "#4285ec",
+  buttonPrimaryText: "white",
+  imdbYellow: "#f6c418",
 };
 
 export const fonts = {

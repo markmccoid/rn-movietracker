@@ -20,6 +20,7 @@ import PickImage from "./PickImage";
 import HiddenContainer from "../../../components/HiddenContainer/HiddenContainer";
 import DetailSelectTags from "./DetailSelectTags";
 import DetailButtonBar from "./DetailButtonBar";
+import DetailToggleTags from "./DetailToggleTags";
 
 // Need to figure out how to have multiple transition sets for a single transitioning view
 // OR maybe wrap both in their own transitioning view
@@ -89,49 +90,9 @@ const ViewSavedMovieDetails = ({ movie, isInSavedMovies }) => {
         setViewTags={setViewTags}
         transitionRef={ref}
       />
-      {/* Saved Details button Bar and components
-        ------------------------------------------- */}
-      {isInSavedMovies && (
-        <View>
-          <Transitioning.View ref={ref} transition={transition2}>
-            <DetailSelectTags
-              viewTags={viewTags}
-              tags={tags}
-              onSelectTag={(tagObj) =>
-                addTagToMovie({ movieId: movie.id, tagId: tagObj.tagId })
-              }
-              removeTagFromMovie={(tagObj) =>
-                removeTagFromMovie({
-                  movieId: movie.id,
-                  tagId: tagObj.tagId,
-                })
-              }
-            />
 
-            <HidableView visible={!viewTags}>
-              <TagCloud>
-                {assignedTags.map((tagObj) => {
-                  return (
-                    <TagItem
-                      key={tagObj.tagId}
-                      tagId={tagObj.tagId}
-                      tagName={tagObj.tagName}
-                      isSelected={tagObj.isSelected}
-                      size="s"
-                      onDeSelectTag={() =>
-                        removeTagFromMovie({
-                          movieId: movie.id,
-                          tagId: tagObj.tagId,
-                        })
-                      }
-                    />
-                  );
-                })}
-              </TagCloud>
-            </HidableView>
-          </Transitioning.View>
-        </View>
-      )}
+      {isInSavedMovies && <DetailToggleTags movieId={movie.id} />}
+
       <DetailButtonBar
         viewTags={viewTags}
         setViewTags={setViewTags}

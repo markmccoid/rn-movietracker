@@ -23,9 +23,8 @@ const DetailMainInfoHoldMenu = ({
   // Setup hold-menu items for use in the hold menu
   const menuItemTitle = { text: "Actions", icon: "home", isTitle: true, onPress: () => {} };
   const menuItemUpdateMovie = {
-    text: `Update Movie-${movie.id}`,
+    text: `Update Movie`,
     onPress: async () => {
-      console.log("Update movie");
       let msg = await refreshMovie(movie.id);
       showRefreshAlert(msg);
       navigateToRoute();
@@ -36,7 +35,6 @@ const DetailMainInfoHoldMenu = ({
     withSeperator: false,
     icon: "share",
     onPress: () => {
-      console.log("Hi");
       nativeShareItem({
         message: `Open & Search in Movie Tracker -> \n${Linking.createURL(
           `/search/${movie.title}`
