@@ -75,7 +75,11 @@ const ViewMoviesScreen = ({ navigation, route }) => {
   const state = useOState();
   const { hydrating } = state.oAdmin.appState;
 
-  const { getFilteredMovies, getMovieDetails } = state.oSaved;
+  const {
+    getFilteredMovies,
+    getMovieDetails,
+    filterData: { searchFilter },
+  } = state.oSaved;
   // For use in showing the search input component
   const offsetY = React.useRef(new Animated.Value(0)).current;
 
@@ -201,15 +205,19 @@ const ViewMoviesScreen = ({ navigation, route }) => {
 
   return (
     <View style={styles.containerForPortrait}>
-      {showSearch ? <ListSearchBar onCancel={() => setShowSearch(false)} /> : null}
+      {/* {showSearch ? <ListSearchBar onCancel={() => setShowSearch(false)} /> : null} */}
+      <ListSearchBar visible={showSearch} onCancel={() => setShowSearch(false)} />
       <Animated.FlatList
         data={getFilteredMovies}
         ref={flatListRef}
         onScroll={(e) => {
-          offsetY.setValue(e.nativeEvent.contentOffset.y);
+          // show or hide search input
           if (e.nativeEvent.contentOffset.y < -50) {
             setShowSearch(true);
+          } else if (e.nativeEvent.contentOffset.y > 50 && !searchFilter) {
+            setShowSearch(false);
           }
+          offsetY.setValue(e.nativeEvent.contentOffset.y);
         }}
         scrollEventThrottle={16}
         keyboardDismissMode

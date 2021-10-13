@@ -8,6 +8,7 @@ export const config = {
     isLoggedIn: undefined,
     appState: {
       dataSource: undefined,
+      deepLink: undefined,
     },
   },
   actions,

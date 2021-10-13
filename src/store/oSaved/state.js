@@ -23,6 +23,7 @@ export const state = {
     genreOperator: "OR",
     genres: [],
     searchFilter: undefined,
+    ignoreFilterOnSearch: true,
   },
   // saved filters that can be applied
   // will be an array of object {id, name, description, tagOperator, tags: []}
