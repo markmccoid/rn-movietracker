@@ -66,6 +66,9 @@ export const filterMovies = (savedMoviesIn, filterData) => {
       if (!movie.title.toLowerCase().includes(searchFilter)) {
         return false;
       }
+      if (filterData.ignoreFilterOnSearch) {
+        return true;
+      }
     }
     //=========================
     // Check Genres

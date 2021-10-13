@@ -646,6 +646,9 @@ export const setSearchFilter = pipe(
   })
 );
 
+export const setIgnoreFilterOnSearch = ({ state }, ignoreFilterFlag) => {
+  state.oSaved.filterData.ignoreFilterOnSearch = ignoreFilterFlag;
+};
 //*==============================================
 //*- SORT Actions
 //*==============================================
