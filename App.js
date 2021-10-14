@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { Provider } from "overmind-react";
-import { HoldMenuProvider } from "react-native-hold-menu";
+import { HoldMenuProvider } from "@markmccoid/react-native-hold-menu";
 import FeatherIcon from "react-native-vector-icons/Feather";
 
 import * as Linking from "expo-linking";
