@@ -9,7 +9,10 @@ import { EraserIcon } from "../../components/common/Icons";
 
 const createProvidersArray = () => [
   { label: "All Providers", value: "all" },
-  ...watchProviders.map((wp) => ({ label: wp.providerName, value: wp.providerId.toString() })),
+  ...watchProviders.map((wp) => ({
+    label: wp.providerName,
+    value: wp.providerId.toString(),
+  })),
 ];
 
 const clearItem = (items) => {
@@ -21,7 +24,6 @@ const DiscoverAdvProviders = ({ pickerStateInfo }) => {
   const { width } = useDimensions().window;
   // Pull out picker states info
   const { pickerStates, updatePickerStates, pickerKey } = pickerStateInfo;
-
   const {
     currentSnapPointInfo: { currSnapIndex },
     advancedSearchHandlers: { handleAdvWatchProviders },
