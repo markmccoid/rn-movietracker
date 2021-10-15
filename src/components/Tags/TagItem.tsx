@@ -15,7 +15,7 @@ const confirmDelete = (fn) =>
   Alert.alert("Confirm Delete", "Delete Tag?", [
     {
       text: "Cancel",
-      onPress: () => console.log("Cancel Pressed"),
+      onPress: () => {},
       style: "cancel",
     },
     { text: "OK", onPress: () => fn() },
