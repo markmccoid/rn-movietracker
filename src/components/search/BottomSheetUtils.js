@@ -1,5 +1,6 @@
 import React from "react";
 import Animated from "react-native-reanimated";
+import { colors } from "../../globalStyles";
 
 //*------------------------
 //* Bottomsheet Background
@@ -9,10 +10,11 @@ export const CustomBackground = ({ animatedIndex, style }) => {
       style={[
         style,
         {
-          backgroundColor: "#eee",
+          backgroundColor: "#95b7ebf5", //`${colors.background}ee`,
+          // backgroundColor: "#eee",
           borderRadius: 10,
           borderWidth: 1,
-          borderColor: "#777",
+          borderColor: "#444",
         },
       ]}
     />
