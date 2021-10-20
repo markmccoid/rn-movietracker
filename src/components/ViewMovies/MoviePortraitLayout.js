@@ -10,7 +10,6 @@ import { colors } from "../../globalStyles";
 const MoviePortraitLayout = ({ movie, setMovieEditingId, navigateToDetails }) => {
   const { width, height } = useDimensions().window;
   const movieReleaseDate = movie.releaseDate?.formatted || " - ";
-
   // const menuItems = createMenuItems({ navigateToDetails, movieId: movie.id });
   //NOTE-- posterURL images are 300 x 450
   // Height is 1.5 times the width

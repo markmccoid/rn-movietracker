@@ -92,7 +92,7 @@ const ViewSavedMovieDetails = ({ movie, isInSavedMovies }) => {
       />
 
       {isInSavedMovies && <DetailToggleTags movieId={movie.id} />}
-
+      <View style={{ marginVertical: 3 }} />
       <DetailButtonBar
         viewTags={viewTags}
         setViewTags={setViewTags}

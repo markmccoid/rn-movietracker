@@ -138,7 +138,7 @@ const ViewMoviesScreen = ({ navigation, route }) => {
         }}
       >
         <ViewMoviesListItem
-          posterURL={pURL}
+          // posterURL={pURL}
           movie={item}
           setMovieEditingId={setMovieEditingId}
         />

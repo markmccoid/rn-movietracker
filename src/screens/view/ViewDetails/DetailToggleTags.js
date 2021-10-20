@@ -233,16 +233,13 @@ const DetailToggleTags = ({ movieId }) => {
 
 const styles = StyleSheet.create({
   wrapper: {
-    // flexDirection: "column",
-    alignItems: "center",
-    marginLeft: 3,
-    marginRight: 3,
-    // borderWidth: 1,
-    // borderColor: colors.commonBorder,
-    borderRadius: 5,
-    padding: 5,
-    paddingRight: 0,
-    marginBottom: 5,
+    // alignItems: "center",
+    // marginLeft: 3,
+    // marginRight: 3,
+    // borderRadius: 5,
+    // padding: 5,
+    // paddingRight: 0,
+    // marginBottom: 5,
   },
   tagItem: {
     borderWidth: 1,
