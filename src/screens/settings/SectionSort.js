@@ -3,7 +3,8 @@ import { StyleSheet, Text, View, ScrollView } from "react-native";
 import SettingsSortItem from "../../components/settings/SettingsSortItem";
 import { useOActions, useOState } from "../../store/overmind";
 
-import DragDropEntry, { sortArray } from "../../components/DragAndSort";
+import DragDropEntry, { sortArray } from "@markmccoid/react-native-drag-and-order";
+// import DragDropEntry, { sortArray } from "../../components/DragAndSort";
 // import { sortArray } from "../../components/DragAndSort/helperFunctions";
 
 import { colors, commonStyles } from "../../globalStyles";

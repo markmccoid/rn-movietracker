@@ -8,8 +8,12 @@ import { MaterialIcons } from "@expo/vector-icons";
 import DragDropEntry, {
   sortArray,
   TScrollFunctions,
-  DefaultDragIndicator,
-} from "../DragAndSort";
+} from "@markmccoid/react-native-drag-and-order";
+// import DragDropEntry, {
+//   sortArray,
+//   TScrollFunctions,
+//   DefaultDragIndicator,
+// } from "../DragAndSort";
 import TagRowEditOverlay from "./TagRowEditOverlay";
 import { colors } from "../../globalStyles";
 import TagItem from "./TagItem";
@@ -64,7 +68,6 @@ export default function TagsView() {
         handlePosition="left"
         handle={MyHandle}
         enableDragIndicator
-        dragIndicator={DefaultDragIndicator}
         dragIndicatorConfig={{ translateXDistance: 100 }}
       >
         {tagData.map((item, idx) => {

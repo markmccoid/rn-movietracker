@@ -8,7 +8,8 @@ import { colors, commonStyles } from "../../globalStyles";
 
 import SavedFiltersItem from "../../components/settings/SavedFiltersItem";
 
-import DragDropEntry, { sortArray } from "../../components/DragAndSort";
+import DragDropEntry, { sortArray } from "@markmccoid/react-native-drag-and-order";
+// import DragDropEntry, { sortArray } from "../../components/DragAndSort";
 // import { sortArray } from "../../components/DragAndSort/helperFunctions";
 
 const ITEM_HEIGHT = 40;
