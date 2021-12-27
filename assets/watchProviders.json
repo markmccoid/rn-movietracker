@@ -14,25 +14,18 @@
     "providerOrder": 2
   },
   {
-    "providerId": 2,
-    "providerLogo": "https://image.tmdb.org/t/p/original/q6tl6Ib6X5FT80RMlcDbexIo4St.jpg",
-    "providerName": "Apple iTunes",
-    "providerPriority": 1,
-    "providerOrder": 18
-  },
-  {
-    "providerId": 3,
-    "providerLogo": "https://image.tmdb.org/t/p/original/p3Z12gKq2qvJaUOMeKNU2mzKVI9.jpg",
-    "providerName": "Google Play Movies",
-    "providerPriority": 5,
-    "providerOrder": 19
-  },
-  {
     "providerId": 15,
     "providerLogo": "https://image.tmdb.org/t/p/original/giwM8XX4V2AQb9vsoN7yti82tKK.jpg",
     "providerName": "Hulu",
     "providerPriority": 1,
     "providerOrder": 3
+  },
+  {
+    "providerId": 531,
+    "providerLogo": "https://image.tmdb.org/t/p/original/pkAHkRhIq3Iu0Z1EhDzbguSlyZF.jpg",
+    "providerName": "Paramount Plus",
+    "providerPriority": 1,
+    "providerOrder": 6
   },
   {
     "providerId": 337,
@@ -138,5 +131,19 @@
     "providerName": "Crackle",
     "providerPriority": 1,
     "providerOrder": 10
+  },
+  {
+    "providerId": 2,
+    "providerLogo": "https://image.tmdb.org/t/p/original/q6tl6Ib6X5FT80RMlcDbexIo4St.jpg",
+    "providerName": "Apple iTunes",
+    "providerPriority": 1,
+    "providerOrder": 18
+  },
+  {
+    "providerId": 3,
+    "providerLogo": "https://image.tmdb.org/t/p/original/p3Z12gKq2qvJaUOMeKNU2mzKVI9.jpg",
+    "providerName": "Google Play Movies",
+    "providerPriority": 5,
+    "providerOrder": 19
   }
 ]
