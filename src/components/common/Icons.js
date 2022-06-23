@@ -201,6 +201,9 @@ export const DescOtherIcon = ({ size, color, style }) => {
 export const InfinityIcon = ({ size, color, style }) => {
   return <Ionicons name="ios-infinite" size={size} color={color} style={style} />;
 };
+export const DeleteUserIcon = ({ size, color, style }) => {
+  return <AntDesign name="deleteuser" size={size} color={color} style={style} />;
+};
 
 //# BACK button icon for headers in screens
 export const BackIcon = ({ size, color, style }) => {

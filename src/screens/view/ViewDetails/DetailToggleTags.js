@@ -150,7 +150,7 @@ const DetailToggleTags = ({ movieId }) => {
           >
             <MotiView {...animIcon}>
               <TouchableOpacity
-                style={{ alignSelf: "flex-start" }}
+                style={{}}
                 onPress={() => {
                   setViewTags((prev) => !prev);
                 }}
@@ -233,12 +233,12 @@ const DetailToggleTags = ({ movieId }) => {
 
 const styles = StyleSheet.create({
   wrapper: {
-    // alignItems: "center",
-    // marginLeft: 3,
-    // marginRight: 3,
-    // borderRadius: 5,
-    // padding: 5,
-    // paddingRight: 0,
+    alignItems: "center",
+    marginLeft: 0,
+    marginRight: 3,
+    borderRadius: 5,
+    padding: 5,
+    paddingRight: 0,
     // marginBottom: 5,
   },
   tagItem: {

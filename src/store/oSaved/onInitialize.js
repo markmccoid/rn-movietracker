@@ -21,7 +21,8 @@ export const onInitialize = async ({ state, effects, actions }) => {
       //     console.log("DATA CHANGE", doc.data());
       //   });
     } else {
-      actions.oAdmin.logUserOut();
+      actions.oAdmin.clearUserData();
+      // actions.oAdmin.logUserOut();
     }
   });
 

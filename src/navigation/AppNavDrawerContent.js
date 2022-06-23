@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Alert } from "react-native";
 import { DrawerContentScrollView, DrawerItemList, DrawerItem } from "@react-navigation/drawer";
 import { LinearGradient } from "expo-linear-gradient";
 import {
@@ -9,13 +9,16 @@ import {
   FilterIcon,
   UserIcon,
   SyncIcon,
-  CarouselIcon,
+  DeleteUserIcon,
 } from "../components/common/Icons";
 import { useOState, useOActions } from "../store/overmind";
 
 import { TouchableOpacity } from "react-native-gesture-handler";
 
+import Firebase from "../storage/firebase";
+
 import { colors } from "../globalStyles";
+import { logUserOut, clearUserData } from "../store/oAdmin/actions";
 // The DrawerContentScrollView takes care of housekeeping for scroll view (notches, etc)
 // The DrawerItemList displays the screens that you pass as children to your drawer
 // The DrawerItem components are your custom components
@@ -135,6 +138,25 @@ function AppNavDrawerContent(props) {
           }}
         /> */}
         <DrawerItem label="Close" onPress={() => props.navigation.toggleDrawer()} />
+        <View
+          style={{
+            borderBottomColor: "black",
+            borderTopWidth: 1,
+            borderBottomWidth: 1,
+            backgroundColor: "#D61D3D",
+            // marginTop: 50,
+          }}
+        >
+          <DrawerItem
+            label={({ focused, color }) => (
+              <Text style={{ color: "white", fontWeight: "600" }}>Delete User</Text>
+            )}
+            icon={({ focused, color, size }) => <DeleteUserIcon size={size} color={"white"} />}
+            onPress={() => {
+              deleteUserWPrompt(clearUserData, deleteUserAlert);
+            }}
+          />
+        </View>
       </DrawerContentScrollView>
       <View style={styles.signOut}>
         <DrawerItem
@@ -149,6 +171,41 @@ function AppNavDrawerContent(props) {
   );
 }
 
+// Delete User Alert - Called from deleteUserWPrompt
+const deleteUserAlert = (deleteUserFunc) => {
+  Alert.alert(
+    "Delete User?",
+    "This action is NOT reversible!!",
+    [
+      { text: "Delete User", onPress: deleteUserFunc },
+      {
+        text: "NO",
+        onPress: () => undefined,
+        style: "cancel",
+      },
+    ],
+    {
+      cancelable: true,
+    }
+  );
+};
+
+// Make sure user wants to be deleted
+const deleteUserWPrompt = async (logUserOut, deleteUserAlert) => {
+  const delUser = async () => {
+    const user = Firebase.auth().currentUser;
+    try {
+      await user.delete();
+      // await logUserOut();
+      // console.log("after LOGOUT");
+    } catch (error) {
+      if (error.code === "auth/requires-recent-login") {
+        Alert.alert("Sign Out and Sign back in to delete user");
+      }
+    }
+  };
+  deleteUserAlert(delUser);
+};
 const styles = StyleSheet.create({
   signOut: {
     paddingBottom: 15,

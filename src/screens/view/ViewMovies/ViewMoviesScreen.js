@@ -262,7 +262,7 @@ const ViewMoviesScreen = ({ navigation, route }) => {
         <View style={[styles.noMoviesShownPosition, styles.noMoviesShownBtnView]}>
           <TouchableOpacity
             style={{ width: 75, height: 75, justifyContent: "center", alignItems: "center" }}
-            onPress={() => navigation.navigate("Search")}
+            onPress={() => navigation.navigate("SearchStack", { name: "Search" })}
           >
             <AddIcon size={50} />
           </TouchableOpacity>

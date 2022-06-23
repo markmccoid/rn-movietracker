@@ -10,6 +10,14 @@ export const logUserOut = async ({ state, effects, actions }) => {
   //Before reset, see if we have any debounced functions to flush
   await effects.oSaved.flushDebounced();
   Firebase.auth().signOut();
+  //Clear User Data is called in the onInitialize.js function
+  // in response to a change in the user id (i.e. there being none because we logged out)
+};
+
+export const clearUserData = async ({ state, effects, actions }) => {
+  //Before reset, see if we have any debounced functions to flush
+  // await effects.oSaved.flushDebounced();
+
   state.oAdmin.isLoggedIn = false;
   state.oAdmin.email = "";
   state.oAdmin.uid = "";
