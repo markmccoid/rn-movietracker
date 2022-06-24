@@ -9,10 +9,15 @@ import * as Linking from "expo-linking";
 import { overmind } from "./src/store/overmind";
 import { initTMDB } from "@markmccoid/tmdb_api";
 import { LogBox } from "react-native";
-const envData = require("./env.json");
+// const envData = require("./env.json");
+import Constants from "expo-constants";
 
 import RootNav from "./src/navigation/RootNav";
 import { colors } from "./src/globalStyles";
+
+console.log("tmdbid", Constants.manifest.extra.tmdbId);
+// const tmdbId = Constants.manifest.extra.tmdbAPI;
+const tmdbId = Constants.manifest.extra.tmdbId;
 
 // export const AuthContext = React.createContext();
 const prefix = Linking.createURL("/");
@@ -70,7 +75,7 @@ const App = () => {
   //   };
   // }, []);
 
-  initTMDB(envData.tmdbId);
+  initTMDB(tmdbId);
   // const overmind = createOvermind(config, { devtools: "192.168.1.7:3031" });
   // const overmind = createOvermind(config);
   return (
